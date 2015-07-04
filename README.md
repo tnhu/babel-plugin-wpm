@@ -1,6 +1,6 @@
 # babel-plugin-wpm
 
-Some specific transformers for [Web Package Manager](https://github.com/tnhu/wpm)
+Some specific transformer(s) for [Web Package Manager](https://github.com/tnhu/wpm)
 
 ## Input
 
@@ -25,6 +25,11 @@ Class({
   }
 });
 ```
+
+## Rules
+
+* If there is only one CamelCase method. The method becomes constructor.
+* If there are more than one CamelCase methods, the first CamelCase method becomes constructor.
 
 ## Installation
 

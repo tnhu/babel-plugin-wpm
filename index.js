@@ -1,8 +1,17 @@
-export default function ({ Plugin, types: t }) {
-  const visitor = {
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+exports['default'] = function (_ref) {
+  var Plugin = _ref.Plugin;
+  var t = _ref.types;
+
+  var visitor = {
     Property: {
-      exit(node, parent, scope) {
-        if (parent.type === 'ObjectExpression') {
+      exit: function exit(node, parent, scope) {
+        if (parent.type === 'ObjectExpression' && node.value.type === 'FunctionExpression' && !parent.__isWPM) {
           var counter = 0;
           var classParent = this.findParent(function (p) {
             counter++;
@@ -16,6 +25,7 @@ export default function ({ Plugin, types: t }) {
             if (firstChar >= 'A' && firstChar <= 'Z') {
               node.key = t.identifier('constructor');
               node.value.id = t.identifier(methodName);
+              parent.__isWPM = true;
             }
           }
         }
@@ -24,9 +34,11 @@ export default function ({ Plugin, types: t }) {
   };
 
   return new Plugin('babel-plugin-wpm', {
-    visitor,
+    visitor: visitor,
     metadata: {
       group: 'builtin-pre'
     }
   });
 };
+
+module.exports = exports['default'];
