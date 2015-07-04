@@ -1,0 +1,27 @@
+{
+  "name": "babel-plugin-wpm",
+  "version": "0.0.1",
+  "description": "Some specific transformers for Web Package Manager",
+  "main": "build.js",
+  "scripts": {
+    "build": "babel index.js > build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tnhu/babel-plugin-wpm.git"
+  },
+  "keywords": [
+    "babel",
+    "babel-plugin",
+    "wpm"
+  ],
+  "author": "Tan Nhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tnhu/babel-plugin-wpm/issues"
+  },
+  "homepage": "https://github.com/tnhu/babel-plugin-wpm",
+  "dependencies": {
+    "babel-core": "^5.6.15"
+  }
+}
