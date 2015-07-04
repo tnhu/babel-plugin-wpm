@@ -6,7 +6,7 @@ Some specific transformers for [Web Package Manager](https://github.com/tnhu/wpm
 
 ```js
 Class({
-	IndexRoute() {
+  IndexRoute() {
   },
 
   signin() {
@@ -18,7 +18,7 @@ Class({
 
 ```js
 Class({
-	constructor: function IndexRoute() {
+  constructor: function IndexRoute() {
   },
 
   signin: function signin() {
